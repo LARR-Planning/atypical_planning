@@ -24,6 +24,12 @@
   <arg name="runsim"                default="true"/>
   <arg name="log"                   default="true"/>
   
+  <!-- Mission -->
+  <arg name="mission_start_x"       default="-7"/>
+  <arg name="mission_start_y"       default="1.5"/>
+  <arg name="mission_goal_x"        default="7"/>
+  <arg name="mission_goal_y"        default="1.5"/>
+
   <!-- Environment -->
   <arg name="world_x_min"           default="-10"/>
   <arg name="world_y_min"           default="-10"/>
@@ -63,7 +69,12 @@
 
   <node pkg="atypical_planning" type="corridor_generator" name="corridor_generator" output="screen">
     <param name="log"                        value="$(arg log)" />
-    
+
+    <param name="mission/start_x"            value="$(arg mission_start_x)" />
+    <param name="mission/start_y"            value="$(arg mission_start_y)" />
+    <param name="mission/goal_x"             value="$(arg mission_goal_x)" />
+    <param name="mission/goal_y"             value="$(arg mission_goal_y)" />
+
     <param name="world/x_min"                value="$(arg world_x_min)" />
     <param name="world/y_min"                value="$(arg world_y_min)" />
     <param name="world/z_min"                value="$(arg world_z_min)" />

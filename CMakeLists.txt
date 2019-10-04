@@ -5,8 +5,8 @@ project(atypical_planning)
 # add_compile_options(-std=c++11)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-set(CMAKE_BUILD_TYPE Debug)
-#set(CMAKE_BUILD_TYPE Release)
+#set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 
 
 #ECBS
@@ -40,8 +40,8 @@ catkin_package(
 
 
 #BUILD
-add_executable(corridor_generator src/corridor_generator.cpp)
-target_link_libraries(corridor_generator
+add_executable(corridor_main_test src/corridor_main_test.cpp)
+target_link_libraries(corridor_main_test
   ${catkin_LIBRARIES}
   ${OCTOMAP_INCLUDE_DIRS}
 )
