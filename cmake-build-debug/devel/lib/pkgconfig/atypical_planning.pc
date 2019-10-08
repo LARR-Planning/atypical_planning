@@ -1,8 +1,0 @@
-prefix=/home/jungwon/catkin_ws/src/atypical_planning/cmake-build-debug/devel
-
-Name: atypical_planning
-Description: Description of atypical_planning
-Version: 0.0.0
-Cflags: -I/home/jungwon/catkin_ws/src/atypical_planning/include
-Libs: -L/home/jungwon/catkin_ws/src/atypical_planning/cmake-build-debug/devel/lib 
-Requires: roscpp roslib

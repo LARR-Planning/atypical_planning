@@ -4,6 +4,8 @@ project(atypical_planning)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
+set(CMAKE_CXX_STANDARD 14)
+
 include_directories(${PROJECT_SOURCE_DIR}/include)
 #set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_BUILD_TYPE Release)
@@ -14,7 +16,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/ecbs)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/ecbs/include)
 
 #EIGEN
-find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+find_package (Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 #OCTOMAP
@@ -40,8 +42,9 @@ catkin_package(
 
 
 #BUILD
-add_executable(corridor_main_test src/corridor_main_test.cpp)
-target_link_libraries(corridor_main_test
+add_executable(corridor_generator src/corridor_main_test.cpp)
+target_link_libraries(corridor_generator
   ${catkin_LIBRARIES}
+  ${EIGEN3_INCLUDE_DIR}
   ${OCTOMAP_INCLUDE_DIRS}
 )

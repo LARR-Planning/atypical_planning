@@ -148,7 +148,7 @@ namespace libCorridorGen{
             BoxConstraintSeq box_seq;
             BoxAllocSeq box_alloc_seq;
             double height = param.world_z_max - param.world_z_min;
-            for(int m = 0; m < M; m++){
+            for(int m = 0; m < SFC_.size(); m++){
                 BoxConstraint2D box = {SFC_[m].first[0], SFC[m].first[1],
                                        SFC_[m].first[3], SFC[m].first[4],
                                        0, SFC_[m].second};
@@ -229,6 +229,7 @@ namespace libCorridorGen{
                 std::cout << box_log << std::endl;
             }
 
+            box_count.resize(SFC.size());
             int box_iter = 0;
             for (int path_iter = 0; path_iter < path_max; path_iter++) {
                 if (box_iter == box_max - 1) {
