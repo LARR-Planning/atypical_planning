@@ -7,8 +7,8 @@ project(atypical_planning)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-#set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
+#set(CMAKE_BUILD_TYPE Release)
 
 
 #ECBS
