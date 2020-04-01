@@ -48,3 +48,10 @@ target_link_libraries(corridor_generator
   ${EIGEN3_INCLUDE_DIR}
   ${OCTOMAP_INCLUDE_DIRS}
 )
+
+add_executable(planner_node src/planner_node.cpp)
+target_link_libraries(planner_node
+  ${catkin_LIBRARIES}
+  ${EIGEN3_INCLUDE_DIR}
+  ${OCTOMAP_INCLUDE_DIRS}
+)
